@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 import "../styles/global.css";
 const pageTitle = "私のAstro学習ブログ";
 ---
 
 <Layout title={pageTitle}>
-  <Navigation />
-
+  <Header />
   <h1>{pageTitle}</h1>
   <p>ここには、私がAstroを学んでいく旅の様子を投稿します。</p>
   <ul>
