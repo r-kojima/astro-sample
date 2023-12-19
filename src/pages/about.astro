@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 const pageTitle = "私について";
 
 const identity = {
@@ -21,6 +22,10 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <Layout title={pageTitle}>
@@ -55,7 +60,7 @@ const goal = 3;
   </ul>
   <p>私のスキルは以下の通りです。</p>
   <ul>
-    {skills.map((skill) => <li>{skill}</li>)}
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
 
   {happy && <p>I am happy to be learning Astro! Astroを学べて幸せです！</p>}
@@ -75,8 +80,14 @@ const goal = 3;
   }
 </Layout>
 
-<style>
-  :root {
-    color: white;
+<style define:vars={{ skillColor, fontWeight, textCase }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
   }
 </style>
